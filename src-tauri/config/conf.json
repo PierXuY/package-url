@@ -1,0 +1,11 @@
+{
+    "windows": [
+        {
+            "title": "ChatGPT Assistant",
+            "url": "https://pearxuy-gpt.streamlit.app/",
+            "width": 1000,
+            "height": 750,
+            "center": true
+        }
+    ]
+}
