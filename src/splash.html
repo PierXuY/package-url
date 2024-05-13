@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading Page</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
-    .logo {
-        opacity: 0;
-        animation: fadeInOut 3s ease-in-out infinite;
-        max-width: 80%;
-        max-height: 80%;
-    }
-
-    @keyframes fadeInOut {
-        0%, 100% {
+        .logo {
             opacity: 0;
+            animation: fadeInOut 3s ease-in-out infinite;
+            max-width: 80%;
+            max-height: 80%;
         }
-        50% {
-            opacity: 1;
+
+        @keyframes fadeInOut {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
-    }
-</style>
+    </style>
 </head>
+
 <body>
     <img class="logo" src="app-icon.png" alt="Logo">
 </body>
+
 </html>
