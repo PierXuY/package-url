@@ -10,7 +10,7 @@
 
 ### 重新打包
 - 复制项目源码
-- 安装rust和node.js环境
+- 安装rust和node.js环境，并使用rust的包管理工具cargo安装所需包（安装IDE插件rust-analyzer会自动安装）
 - 更换根目录和/src路径下的app-icon.png图片，名称需一致
 - 运行cargo tauri icon来更换图标
 - 更改\src-tauri\tauri.conf.json中的唯一标识符"identifier"和"package"信息
