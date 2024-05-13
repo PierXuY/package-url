@@ -1,9 +1,12 @@
 [package]
-name = "url-exe"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "package-url"
+version = "0.0.1"
+description = "package url"
+authors = ["PierXuY"]
 edition = "2021"
+
+[workspace]
+members = ["../src-tauri/"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
