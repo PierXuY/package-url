@@ -41,7 +41,7 @@ jobs:
           override: true
 
       - name: Change directory to /src-tauri
-        run: cd /src-tauri
+        run: cd ./src-tauri
         
       - name: Install cargo dependencies
         run: cargo build --release
