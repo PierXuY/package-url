@@ -1,6 +1,9 @@
 name: 'publish'
 
 on:
+  push:
+    branches:
+      - MacOS
   workflow_dispatch:
 
 jobs:
