@@ -21,6 +21,7 @@
       }
     },
     "windows": [],
+    "macOSPrivateApi":true,
     "security": {
       "csp": null
     },
