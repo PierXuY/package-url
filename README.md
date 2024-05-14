@@ -14,7 +14,7 @@
 可以重新设定默认url，替换应用图标等
 - 复制项目源码
 - 安装rust环境
-- 安装tauri cli 命令：`cargo install tauri-cli`
+- 安装tauri cli：`cargo install tauri-cli`
 - 安装IDE插件rust-analyzer，会自动安装所需包
 - 更换根目录和/src路径下的app-icon.png图片，名称需一致
 - 运行cargo tauri icon来更换图标
