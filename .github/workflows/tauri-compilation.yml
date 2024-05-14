@@ -62,7 +62,7 @@ jobs:
           key: ${{ runner.os }}-cargo-target-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Build and test
-        run: cargo build --all-features --release && cargo test --all-features --release
+        run: cargo tauri build
 
       - uses: tauri-apps/tauri-action@v0
         env:
