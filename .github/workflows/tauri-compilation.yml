@@ -39,12 +39,9 @@ jobs:
           toolchain: stable
           target: ${{ matrix.settings.args }}
           override: true
-
-      - name: Change directory to /src-tauri
-        run: cd ./src-tauri
         
       - name: Install cargo dependencies
-        run: cargo build --release
+        run: cd ./src-tauri && cargo build --release
 
       - name: Cache cargo registry
         uses: actions/cache@v2
