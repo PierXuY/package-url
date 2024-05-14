@@ -1,6 +1,4 @@
 项目基于Tauri框架，最初用于打包另一个[ChatGPT-Assistant](https://github.com/PierXuY/ChatGPT-Assistant)项目。    
-
-
 对项目进行简易配置即可打包任意URL，跨平台适配。   
 
 
