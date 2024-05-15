@@ -17,14 +17,24 @@
 - 安装完成后，定义config文件中的conf.json文件，改为自己的url信息
 - 打开应用即可
 
-### 重新打包
+### 重新打包（本地）
 可以重新设定默认url，替换应用图标等
 - 复制项目源码
 - 安装rust环境
 - 安装tauri cli：`cargo install tauri-cli`
 - 安装IDE插件rust-analyzer，会自动安装所需包
-- 更换根目录和/src路径下的app-icon.png图片，名称需一致
+- 更换`根目录`和`/src路径`下的app-icon.png图片，名称需一致
 - 运行`cargo tauri icon`来更换图标
-- 更改\src-tauri\tauri.conf.json中的唯一标识符"identifier"和"package"信息
-- 定义config文件中的conf.json文件，改为自己的url信息
+- 更改`\src-tauri\tauri.conf.json`中的 唯一标识符"identifier" 和 "package"信息
+- 定义config文件夹中的`conf.json文件`，改为自己的url信息
 - 运行`cargo tauri build`打包应用（`cargo tauri dev`可用于调试）
+
+### 重新打包（GitHub Action）
+可以通过GitHub Action进行线上打包
+- fork项目
+- 更换`根目录`和`/src路径`下的app-icon.png图片，名称需一致
+- 运行`cargo tauri icon`来更换图标
+- 更改`\src-tauri\tauri.conf.json`中的 唯一标识符"identifier" 和 "package"信息
+- 定义config文件夹中的`conf.json文件`，改为自己的url信息
+- 点击fork项目上方的Actions，选择名为publish的workflow，点击右方的Run workflow
+- 等待打包完成，在项目的Releases中查看（可能在草稿箱）
