@@ -32,7 +32,6 @@
 ### GitHub Action 跨平台打包
 - fork项目
 - 更换 根目录 和  /src路径 下的app-icon.png图片，名称需一致
-- 运行`cargo tauri icon`来更换图标
 - 更改\src-tauri\tauri.conf.json中的 唯一标识符"identifier" 和 "package"信息
 - 定义config文件夹中的conf.json文件，改为自己的url信息
 - 点击fork项目上方的Actions，选择名为publish的workflow，点击右方的Run workflow
