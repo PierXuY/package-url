@@ -35,8 +35,10 @@ jobs:
         with:
           workspaces: './src-tauri -> target'
 
-      - name: Generate Icon
-        run: cargo tauri icon
+      - name: Insatll Tarui and Generate Icon
+        run: |
+          cargo install tauri-cli
+          cargo tauri icon
   
       - uses: tauri-apps/tauri-action@v0
         env:
