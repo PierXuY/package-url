@@ -17,7 +17,7 @@
 - 安装完成后，定义config文件中的conf.json文件，改为自己的url信息
 - 打开应用即可
 
-### 重新打包（本地）
+### 本地打包
 可以重新设定默认url，替换应用图标等
 - 复制项目源码
 - 安装rust环境
@@ -29,7 +29,7 @@
 - 定义config文件夹中的`conf.json文件`，改为自己的url信息
 - 运行`cargo tauri build`打包应用（`cargo tauri dev`可用于调试）
 
-### 重新打包（GitHub Action）
+### GitHub Action 跨平台打包
 - fork项目
 - 更换`根目录`和`/src路径`下的app-icon.png图片，名称需一致
 - 运行`cargo tauri icon`来更换图标
