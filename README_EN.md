@@ -1,5 +1,4 @@
-This project is based on the Tauri framework and was originally used for packaging another [ChatGPT-Assistant](https://github.com/PierXuY/ChatGPT-Assistant) project.   
-
+This project is based on the Tauri framework and was originally used for packaging another [ChatGPT-Assistant](https://github.com/PierXuY/ChatGPT-Assistant) project.     
 Simple configuration of the project can package any URL, with cross-platform compatibility.
 
 **There are two ways to use it:**
