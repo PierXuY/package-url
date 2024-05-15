@@ -2,10 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use dunce::canonicalize;
-use serde_json::{json, Value};
-use std::fs::File;
 use std::io;
-use std::io::Read;
 use std::path::PathBuf;
 use std::{thread, time};
 use tauri::Window;
@@ -55,21 +52,30 @@ fn create_splash_window(app: &tauri::App) -> Window {
     splash_window
 }
 
-fn create_url_window(app: &tauri::App, config_path: std::path::PathBuf) -> Window {
+fn parse_config(
+    config_path: std::path::PathBuf,
+) -> Result<WindowConfig, Box<dyn std::error::Error>> {
     let conf_json_path = config_path.join("conf.json");
+    let contents = std::fs::read_to_string(conf_json_path)?;
+    let mut json_data: serde_json::Value = serde_json::from_str(&contents)?;
+    
+    if let Some(obj) = json_data
+        .get_mut("url_window")
+        .and_then(serde_json::Value::as_object_mut)
+    {
+        obj.insert("label".to_string(), serde_json::json!("url_window"));
+    }
 
-    let mut file = File::open(conf_json_path).expect("Failed to open file");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents)
-        .expect("Failed to read file");
-    let json_data: Value = serde_json::from_str(&contents).expect("Failed to parse JSON");
+    serde_json::from_value(json_data["url_window"].clone())
+        .map_err(|_e| From::from("Failed to parse JSON data"))
+}
 
+fn create_url_window(app: &tauri::App, config_path: std::path::PathBuf) -> Window {
     let handle = app.handle();
-    let url_window_config: WindowConfig =
-        serde_json::from_value(json_data.get("windows").unwrap().get(0).unwrap().clone())
-            .expect("error");
-    let url_window = tauri::WindowBuilder::from_config(&handle, url_window_config.clone())
+    let url_window_config = parse_config(config_path).unwrap();
+    let url_window = tauri::WindowBuilder::from_config(&handle, url_window_config)
         .visible(false)
+        .initialization_script(include_str!("setupLinKS.js"))
         .build()
         .unwrap();
 
@@ -81,7 +87,6 @@ fn monitor_url(url_window: Window, splash_window: Window) {
         loop {
             let current_url = &url_window.url();
             let url_str = current_url.as_str();
-            // 检查URL是否为 "about:blank"
             if url_str != "about:blank" {
                 splash_window.close().unwrap();
                 url_window.show().unwrap();
