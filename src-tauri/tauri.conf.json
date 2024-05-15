@@ -21,6 +21,11 @@
       "resources": [
         "config"
       ],
+      "windows": {
+        "wix": {
+          "language": ["zh-CN", "en-US"]
+        }
+      },
       "active": true,
       "targets": "all",
       "identifier": "Chatgpt-Assistant",
