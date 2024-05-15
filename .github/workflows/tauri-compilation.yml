@@ -35,6 +35,9 @@ jobs:
         with:
           workspaces: './src-tauri -> target'
 
+      - name: Generate Icon
+        run: cargo tauri icon
+  
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
