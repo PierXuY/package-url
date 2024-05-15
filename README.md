@@ -30,7 +30,6 @@
 - 运行`cargo tauri build`打包应用（`cargo tauri dev`可用于调试）
 
 ### 重新打包（GitHub Action）
-可以通过GitHub Action进行线上打包
 - fork项目
 - 更换`根目录`和`/src路径`下的app-icon.png图片，名称需一致
 - 运行`cargo tauri icon`来更换图标
