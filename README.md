@@ -13,7 +13,7 @@
 
 
 ### 简单体验
-- 下载Releases中的程序并安装
+- 下载[Releases](https://github.com/PierXuY/package-url/releases/tag/app-v0.0.3)中的程序并安装
 - 安装完成后，定义config文件中的conf.json文件，改为自己的url信息
 - 打开应用即可
 
