@@ -16,7 +16,7 @@ You can re-set the default URL, replace the application icon, etc.
 - Install rust environment
 - Install tauri cli: `cargo install tauri-cli`
 - Install the IDE plugin rust-analyzer, which will automatically install the required packages
-- Replace the app-icon.png images in the root directory and /src path, the name should be consistent
+- Replace the app-icon.png images(must be square) in the root directory and /src path, the name should be consistent
 - Run `cargo tauri icon` to replace the icon
 - Change the unique identifier "identifier" and "package" information in \src-tauri\tauri.conf.json
 - Define the conf.json file in the config folder and change it to your own URL information
@@ -24,7 +24,7 @@ You can re-set the default URL, replace the application icon, etc.
 
 ### GitHub Action Cross-platform Packaging
 - Fork the project
-- Replace the app-icon.png images in the root directory and /src path, the name should be consistent
+- Replace the app-icon.png images(must be square) in the root directory and /src path, the name should be consistent
 - Change the unique identifier "identifier" and "package" information in \src-tauri\tauri.conf.json
 - Define the conf.json file in the config folder and change it to your own URL information
 - Click on Actions above the forked project, select the workflow named publish, and click Run workflow on the right
