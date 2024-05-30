@@ -75,7 +75,7 @@ fn create_url_window(app: &tauri::App, config_path: std::path::PathBuf) -> Windo
     let url_window_config = parse_config(config_path).unwrap();
     let url_window = tauri::WindowBuilder::from_config(&handle, url_window_config)
         .visible(false)
-        .initialization_script(include_str!("setupLinKS.js"))
+        .initialization_script(include_str!("../scripts/setupLinKS.js"))
         .build()
         .unwrap();
 
