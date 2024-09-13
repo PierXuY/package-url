@@ -14,11 +14,14 @@ members = ["../src-tauri/"]
 tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1", features = [ "api-all", "macos-private-api"] }
+tauri = { version = "1", features = [ "dialog-all", "http-all", "shell-open", "macos-private-api"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 dunce = "1.0.4"
 tauri-utils = "1.5.4"
+tokio = { version = "1.40.0", features = ["full"] }
+command-group = {version = "5.0.1", features = ["with-tokio"] }
+winapi = "0.3.9"
 
 [features]
 # This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!

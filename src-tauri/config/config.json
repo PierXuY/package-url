@@ -1,0 +1,11 @@
+{
+    "url_window": {
+        "title": "Toolkit",
+        "url": "https://github.com/PierXuY/package-url",
+        "width": 1000,
+        "height": 750,
+        "center": true
+    },
+    "windows_cmd": [],
+    "emit_message": false
+}

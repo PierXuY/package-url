@@ -5,17 +5,45 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "Chatgpt Assistant",
-    "version": "0.0.3"
+    "productName": "Toolkit",
+    "version": "0.0.4"
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "dialog": {
+        "all": true,
+        "ask": true,
+        "confirm": true,
+        "message": true,
+        "open": true,
+        "save": true
+      },
+      "all": false,
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": [
+          "http://**"
+        ]
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      }
     },
     "windows": [],
-    "macOSPrivateApi":true,
+    "macOSPrivateApi": true,
     "security": {
-      "csp": null
+      "csp": null,
+      "dangerousRemoteDomainIpcAccess": [
+        {
+          "domain": "127.0.0.1",
+          "windows": ["url_window"],
+          "plugins": ["dialog", "fs", "os", "shell", "window"],
+          "enableTauriAPI": true
+        }
+      ],
+      "dangerousUseHttpScheme":true
     },
     "bundle": {
       "resources": [
@@ -23,12 +51,15 @@
       ],
       "windows": {
         "wix": {
-          "language": ["zh-CN", "en-US"]
+          "language": [
+            "zh-CN",
+            "en-US"
+          ]
         }
       },
       "active": true,
       "targets": "all",
-      "identifier": "Chatgpt-Assistant",
+      "identifier": "Toolkit",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
