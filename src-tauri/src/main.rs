@@ -48,10 +48,12 @@ fn main() {
                 Ok(())
             }
         })
-        .on_window_event({
+        .build(tauri::generate_context!())
+        .unwrap()
+        .run({
             let executed_windows_cmd_child = Arc::clone(&executed_windows_cmd_child);
-            move |event| match event.event() {
-                tauri::WindowEvent::CloseRequested { .. } => {
+            move |_app_handle, event| match event {
+                tauri::RunEvent::ExitRequested { .. } => {
                     if let Some(windows_cmd_child) =
                         executed_windows_cmd_child.lock().unwrap().take()
                     {
@@ -61,8 +63,6 @@ fn main() {
                 _ => {}
             }
         })
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
 }
 
 fn resolve_config_path(app: &tauri::App) -> PathBuf {
