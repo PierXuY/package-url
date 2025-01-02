@@ -19,6 +19,8 @@ use winapi::um::winbase::CREATE_NO_WINDOW;
 fn main() {
     let executed_windows_cmd_child = Arc::new(Mutex::new(None));
     tauri::Builder::default()
+        // Ensure a single instance of your tauri app is running.
+        .plugin(tauri_plugin_single_instance::init(|_, _, _| {}))
         .setup({
             let executed_windows_cmd_child = Arc::clone(&executed_windows_cmd_child);
             move |app| {
