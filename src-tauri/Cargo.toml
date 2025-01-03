@@ -14,7 +14,7 @@ members = ["../src-tauri/"]
 tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1", features = [ "dialog-all", "http-all", "shell-open", "macos-private-api"] }
+tauri = { version = "1.8.1", features = [ "dialog-all", "http-all", "shell-open", "macos-private-api"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 dunce = "1.0.4"
